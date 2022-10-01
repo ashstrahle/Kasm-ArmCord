@@ -1,5 +1,12 @@
 # Kasm-ArmCord
-**Discord ARM64 Client** for Kasm (Ideal Discord client for Raspberry Pi)
+**Discord ARM64 Client** for Kasm (Ideal for Raspberry Pi)
+
+Containerised Discord client, streamed to your browser, running on a Raspberry Pi 😳
+
+![](/docs/armcord-screenshot1.png)
+
+![](/docs/armcord-screenshot2.png)
+
 
 This distro creates a custom Kasm ArmCord ARM64 Discord client image.
 
@@ -11,7 +18,7 @@ This distro creates a custom Kasm ArmCord ARM64 Discord client image.
 
 - Create the Kasm image as per below:
 
-![](/docs/ArmCord.png)
+![](/docs/armcord-setup.png)
 
 - Be sure to configure **Persistent Profile Path** so that user details are saved.
 
