@@ -8,7 +8,7 @@ Containerised Discord client, streamed to your browser, running on a Raspberry P
 ![](/docs/armcord-screenshot2.png)
 
 
-This distro creates a custom Kasm ArmCord ARM64 Discord client image.
+This repository creates a custom Kasm ArmCord ARM64 Discord client image.
 
 ## Installation
 
