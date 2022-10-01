@@ -7,7 +7,7 @@ This distro creates a custom Kasm ArmCord ARM64 Discord client image.
 
 - Run the following to create the required Docker image:
 
-      ``` docker build -t armcord -f Dockerfile .```
+      docker build -t armcord -f Dockerfile .
 
 - Create the Kasm image as per below:
 
