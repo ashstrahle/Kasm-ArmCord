@@ -1,4 +1,4 @@
-FROM kasmweb/core-ubuntu-focal:1.11.0
+FROM kasmweb/core-ubuntu-jammy:1.12.0
 USER root
 
 ENV HOME /home/kasm-default-profile
@@ -8,7 +8,7 @@ WORKDIR $HOME
 
 ######### Customize Container Here ###########
 
-ENV ARMCORDVER 3.0.8
+ENV ARMCORDVER 3.1.2
 RUN wget -O armcord.tar.gz https://github.com/ArmCord/ArmCord/releases/download/v$ARMCORDVER/ArmCord-$ARMCORDVER-arm64.tar.gz \
   && tar xzvf armcord.tar.gz \
   && mv ArmCord-$ARMCORDVER-arm64 /opt/ArmCord \
