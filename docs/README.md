@@ -1,7 +1,7 @@
 # Kasm-ArmCord
 **Discord ARM64 Client** for Kasm (Ideal for Raspberry Pi)
 
-Containerised Discord client, streamed to your browser, running on a Raspberry Pi 😳
+Containerised Discord client, streamed to your browser
 
 ![](/docs/armcord-screenshot1.png)
 
