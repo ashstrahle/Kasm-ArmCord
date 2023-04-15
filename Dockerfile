@@ -1,4 +1,4 @@
-FROM kasmweb/core-ubuntu-jammy:1.12.0
+FROM kasmweb/core-ubuntu-jammy:1.13.0
 USER root
 
 ENV HOME /home/kasm-default-profile
