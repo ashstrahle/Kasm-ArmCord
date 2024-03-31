@@ -1,4 +1,4 @@
-FROM kasmweb/core-ubuntu-jammy:1.14.0
+FROM kasmweb/core-ubuntu-jammy:1.15.0
 USER root
 
 ENV HOME /home/kasm-default-profile
@@ -8,7 +8,7 @@ WORKDIR $HOME
 
 ######### Customize Container Here ###########
 
-ENV ARMCORDVER 3.1.2
+ENV ARMCORDVER 3.2.6
 RUN wget -O armcord.tar.gz https://github.com/ArmCord/ArmCord/releases/download/v$ARMCORDVER/ArmCord-$ARMCORDVER-arm64.tar.gz \
   && tar xzvf armcord.tar.gz \
   && mv ArmCord-$ARMCORDVER-arm64 /opt/ArmCord \
@@ -16,7 +16,8 @@ RUN wget -O armcord.tar.gz https://github.com/ArmCord/ArmCord/releases/download/
 
 # Update the desktop environment to be optimized for a single application
 RUN cp $HOME/.config/xfce4/xfconf/single-application-xfce-perchannel-xml/* $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/
-RUN cp /usr/share/extra/backgrounds/bg_kasm.png /usr/share/extra/backgrounds/bg_default.png
+#RUN cp /usr/share/backgrounds/bg_kasm.png /usr/share/extra/backgrounds/bg_default.png
+RUN rm -f /usr/share/backgrounds/bg_default.png 
 RUN apt-get remove -y xfce4-panel
 
 Run echo $'#!/usr/bin/env bash \n\
