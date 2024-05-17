@@ -16,17 +16,17 @@ RUN wget -O armcord.tar.gz https://github.com/ArmCord/ArmCord/releases/download/
 
 # Update the desktop environment to be optimized for a single application
 RUN cp $HOME/.config/xfce4/xfconf/single-application-xfce-perchannel-xml/* $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/
-RUN rm -f /usr/share/backgrounds/bg_default.png 
+RUN rm -f /usr/share/backgrounds/bg_default.png
 RUN apt-get remove -y xfce4-panel
 
-Run echo $'#!/usr/bin/env bash \n\
+RUN echo $'#!/usr/bin/env bash \n\
 set -ex \n\
-START_COMMAND="/opt/ArmCord/armcord --no-sandbox" \n\
+START_COMMAND="/opt/ArmCord/armcord" \n\
 PGREP="armcord" \n\
+DEFAULT_ARGS="--no-sandbox" \n\
 export MAXIMIZE="true" \n\
 export MAXIMIZE_NAME="ArmCord" \n\
 MAXIMIZE_SCRIPT=$STARTUPDIR/maximize_window.sh \n\
-DEFAULT_ARGS="" \n\
 ARGS=${APP_ARGS:-$DEFAULT_ARGS} \n\
  \n\
 options=$(getopt -o gau: -l go,assign,url: -n "$0" -- "$@") || exit \n\
@@ -57,7 +57,7 @@ kasm_exec() { \n\
     fi  \n\
      \n\
     # Since we are execing into a container that already has the browser running from startup,  \n\
-    #  when we don't have a URL to open we want to do nothing. Otherwise a second browser instance would open.  \n\
+    #  when we dont have a URL to open we want to do nothing. Otherwise a second browser instance would open.  \n\
     if [ -n "$URL" ] ; then \n\
         /usr/bin/filter_ready \n\
         /usr/bin/desktop_ready \n\
@@ -104,8 +104,6 @@ else \n\
     kasm_startup \n\
 fi' > $STARTUPDIR/custom_startup.sh \
   && chmod +x $STARTUPDIR/custom_startup.sh
-# RUN echo "/usr/bin/desktop_ready && ArmCord-$ARMCORDVER-arm64/armcord --no-sandbox &" > $STARTUPDIR/custom_startup.sh \
-#   && chmod +x $STARTUPDIR/custom_startup.sh
 
 ######### End Customizations ###########
 
