@@ -8,7 +8,7 @@ WORKDIR $HOME
 
 ######### Customize Container Here ###########
 
-ENV ARMCORDVER 3.2.6
+ENV ARMCORDVER 3.2.7
 RUN wget -O armcord.tar.gz https://github.com/ArmCord/ArmCord/releases/download/v$ARMCORDVER/ArmCord-$ARMCORDVER-arm64.tar.gz \
   && tar xzvf armcord.tar.gz \
   && mv ArmCord-$ARMCORDVER-arm64 /opt/ArmCord \
